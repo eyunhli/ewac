@@ -18,6 +18,7 @@
     }
     .navbar .nav .active > a, .navbar .nav .active > a:hover {
         background: #206484 !important;
+		color:#fff;
     }
     .navbar .divider-vertical {
         border-left-color:#2078A1;
