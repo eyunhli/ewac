@@ -42,7 +42,8 @@ public class UserServiceImpl implements UserService {
     }
 
     public List<AccountInfo> findByBalanceGreaterThan(Integer balance,Pageable pageable){
-        Page<AccountInfo> accounts = userDao.findByBalanceGreaterThan(balance,pageable);
+        System.out.println(balance);
+    	Page<AccountInfo> accounts = userDao.findByBalanceGreaterThan(balance,pageable);
         return accounts.getContent();
     }
 }
