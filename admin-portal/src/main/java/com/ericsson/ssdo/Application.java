@@ -25,7 +25,6 @@ public class Application {
 		final ClassPath classpath = new ClassPath();
 		File commonLibDir = new File("lib");
 		commonLibDir.list(new FilenameFilter() {
-			
 			public boolean accept(File dir, String name) {
 				if (name.endsWith(".jar"))
 					classpath.addClasspath(dir.getPath() + "/" + name);

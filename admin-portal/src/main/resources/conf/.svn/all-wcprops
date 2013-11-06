@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/eyunhli/ewac/!svn/ver/4/trunk/admin-portal/src/main/resources/conf
+END
+jetty-context.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/eyunhli/ewac/!svn/ver/4/trunk/admin-portal/src/main/resources/conf/jetty-context.xml
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/eyunhli/ewac/!svn/ver/4/trunk/admin-portal/src/main/resources/conf/log4j.properties
+END
+spring-cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/eyunhli/ewac/!svn/ver/4/trunk/admin-portal/src/main/resources/conf/spring-cfg.xml
+END
