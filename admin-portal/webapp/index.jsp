@@ -133,28 +133,28 @@
                             <ul class="nav user_menu pull-right">
                                 <li class="hidden-phone hidden-tablet">
                                     <div class="nb_boxes clearfix">
-                                        <a data-toggle="modal" data-backdrop="static" href="#myMail" class="label ttip_b" title="New messages">25 <i class="splashy-mail_light"></i></a>
+                                       <!-- <a data-toggle="modal" data-backdrop="static" href="#myMail" class="label ttip_b" title="New messages">25 <i class="splashy-mail_light"></i></a>
                                         <a data-toggle="modal" data-backdrop="static" href="#myTasks" class="label ttip_b" title="New tasks">10 <i class="splashy-calendar_week"></i></a>
-                                    </div>
+                                   --> </div>
                                 </li>
 								<li class="divider-vertical hidden-phone hidden-tablet"></li>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle nav_condensed" data-toggle="dropdown"><i class="flag-gb"></i> <b class="caret"></b></a>
+                                   <!-- <a href="#" class="dropdown-toggle nav_condensed" data-toggle="dropdown"><i class="flag-gb"></i> <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
 										<li><a href="javascript:void(0)"><i class="flag-de"></i> Deutsch</a></li>
 										<li><a href="javascript:void(0)"><i class="flag-fr"></i> Français</a></li>
 										<li><a href="javascript:void(0)"><i class="flag-es"></i> Español</a></li>
 										<li><a href="javascript:void(0)"><i class="flag-ru"></i> Pусский</a></li>
-                                    </ul>
+                                    </ul>-->
                                 </li>
                                 <li class="divider-vertical hidden-phone hidden-tablet"></li>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<%=path%>/img/user_avatar.png" alt="" class="user_avatar" /> Johny Smith <b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<%=path%>/img/user_avatar.png" alt="" class="user_avatar" /> ${username} <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-										<li><a href="user_profile.html">My Profile</a></li>
+								<!--		<li><a href="user_profile.html">My Profile</a></li>
 										<li><a href="javascrip:void(0)">Another action</a></li>
-										<li class="divider"></li>
-										<li><a href="login.html">Log Out</a></li>
+										<li class="divider"></li>-->
+										<li><a href="/ac/login">Log Out</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -276,6 +276,7 @@
             
             </div>
             
+            
 			<!-- sidebar -->
             <a href="javascript:void(0)" class="sidebar_switch on_switch ttip_r" title="Hide Sidebar">Sidebar switch</a>
             <div class="sidebar">
@@ -333,7 +334,18 @@
 			<!-- wizard functions -->
 			<script src="<%=path%>/js/gebo_wizard.js"></script>
 			<!-- form functions -->
-         <script src="<%=path%>/js/ap_wizard.js"></script>
+         	<script src="<%=path%>/js/ap_wizard.js"></script>
+         	
+         	 <!-- datatable -->
+            <script src="<%=path%>/lib/datatables/jquery.dataTables.min.js"></script>
+            <script src="<%=path%>/lib/datatables/extras/Scroller/media/js/dataTables.scroller.min.js"></script>
+            <!-- datatable table tools -->
+            <script src="<%=path%>/lib/datatables/extras/TableTools/media/js/TableTools.min.js"></script>
+            <script src="<%=path%>/lib/datatables/extras/TableTools/media/js/ZeroClipboard.js"></script>
+            <!-- datatables bootstrap integration -->
+            <script src="<%=path%>/lib/datatables/jquery.dataTables.bootstrap.min.js"></script>
+            <!-- datatable functions -->
+            <script src="<%=path%>/js/gebo_datatables.js"></script>
 			<script>
 				$(document).ready(function() {
 					//* show all elements & remove preloader

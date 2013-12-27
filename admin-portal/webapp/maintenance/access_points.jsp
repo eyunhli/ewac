@@ -7,7 +7,7 @@
                         <thead>
                           <tr>
                             <th><span class="formSep">
-                              <input type="checkbox" value="option1" name="optionsCheckboxList2">
+                              <input type="checkbox"  onclick="checkId(this.checked)">
                             </span></th>
                             <th>IP</th>
                             <th>MAC</th>
@@ -18,19 +18,7 @@
                             <th>Status</th>
                           </tr>
                         </thead>
-                        <tbody>
-                          <tr>
-                            <td><span class="formSep">
-                              <input type="checkbox" value="option1" name="optionsCheckboxList">
-                            </span></td>
-                            <td>0</td>
-                            <td>NA</td>
-                            <td>NA</td>
-                            <td>NA</td>
-                            <td>NA</td>
-                            <td>NA</td>
-                            <td>NA</td>
-                          </tr>
+                        <tbody id="apList">
                         </tbody>
                       </table>
                     </div>
@@ -40,3 +28,26 @@
                     <button class="btn btn-primary" type="submit">Reboot</button>
                   </div>
         </div>
+        <script>
+        $.ajax({ url: "ap/apList.json",async:false,success: function(msg){
+      		$.each(msg,function(i,it){ 
+      		var str = "<tr>"
+                            +"   <td><span class='formSep'><input type='checkbox' value='"+it.id+"' name='id'></span></td>"
+                            +"   <td>"+it.ip+"</td>"
+                            +"   <td>"+it.mac+"</td>"
+                            +"   <td>"+it.name+"</td>"
+                            +"   <td>"+it.building+"</td>"
+                            +"   <td>"+it.floor+"</td>"
+                            +"   <td>"+it.location+"</td>"
+                            +"   <td>"+it.status+"</td>"
+                          +"</tr>"
+      			$('#apList').append(str)
+      		});
+      		
+      	}});
+      	
+      	function checkId(it){
+      	alert(it)
+			$("input[name='id']").attr("checked",it);
+		}
+        </script>

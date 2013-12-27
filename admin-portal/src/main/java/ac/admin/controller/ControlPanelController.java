@@ -26,7 +26,6 @@ public class ControlPanelController {
 	}*/
 	@RequestMapping("/contropanel")
 	public ModelAndView controPanel(Model model) {
-		System.out.println(userService.findByBalanceGreaterThan(100, new PageRequest(1, 2)));
 		model.addAttribute("message", "Hello World!");
 		return new ModelAndView("forward:/WuXianWangLuo.jsp");
 	}

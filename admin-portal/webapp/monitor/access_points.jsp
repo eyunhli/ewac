@@ -21,7 +21,7 @@
                             <th>Uptime</th>
                           </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="apList">
                           <tr>
                             <td>&nbsp; </td>
                             <td>&nbsp;</td>
@@ -47,3 +47,32 @@
                     </div>
                   </div>
         </div>
+
+  <script>
+        $.ajax({ url: "ap/apList.json",async:false,success: function(msg){
+      		$.each(msg,function(i,it){ 
+      		var str = "<tr>"
+                            +"   <td><span class='formSep'><input type='radio' value='"+it.id+"' name='id'></span></td>"
+                            +"   <td>"+it.status+"</td>"
+                            +"   <td>"+it.name+"</td>"
+                            +"   <td>"+it.model+"</td>"
+                            +"   <td>"+it.mac+"</td>"
+                            +"   <td>"+it.ip+"</td>"
+                            +"   <td>"+it.site+"</td>"
+                            +"   <td>"+it.sroup+"</td>"
+                            +"   <td>"+it.building+"</td>"
+                            +"   <td>"+it.floor+"</td>"
+                            +"   <td>"+it.location+"</td>"
+                            +"   <td>"+it.mode24ghz+"/"+it.mode5ghz+"</td>"
+                            +"   <td>"+it.uptime+"</td>"
+                          +"</tr>"
+      			$('#apList').append(str)
+      		});
+      		
+      	}});
+      	
+      	function checkId(it){
+      	alert(it)
+			$("input[name='id']").attr("checked",it);
+		}
+        </script>

@@ -23,4 +23,6 @@
             </property>
     </bean>
 
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+	<bean id="h2" lazy-init="false" class="ac.admin.common.H2" init-method="startServer" />
 </beans>

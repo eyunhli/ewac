@@ -10,7 +10,7 @@
                         
                       <div class="formSep">
                       <label>Active SSID present</label>
-                        <select name="select">
+                        <select id="ssid" name="ssid">
                           <option>Select an SSID</option>
                           <option>1</option>
                           <option>2</option>

@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <div class="main_content">
               <div class="row-fluid">
                     <div class="span12">
@@ -7,14 +9,16 @@
                     
                       <div class="tabbable" >
                         <ul class="nav nav-tabs">
-                          <li class="active"><a href="#tab1" data-toggle="tab">Group-1</a></li>
-                          <li> <a href="#tab2" data-toggle="tab">Group 2</a></li>
-                          <li><a href="#tab3" data-toggle="tab">Group 3 </a></li>
-                          <li><a href="#tab4" data-toggle="tab">Group 4</a></li>
+                        <c:forEach items="${map}" var="it" varStatus="status">
+                          <li class="${status.index==0?'active':''}"><a href="#tab${status.index}" data-toggle="tab">${it.key}</a></li>
+                        </c:forEach>
+                           <li><a href="javascript:void()" onclick="$('#contentwrapper').load('/ac/configure/profileAdvancedRadioEdit?type=${group}')" data-toggle="tab"> + </a></li>
                         </ul>
                         <div class="tab-content">
                           <!--tab1-->
-                          <div class="tab-pane active" id="tab1">
+                          <c:forEach items="${map}" var="it" varStatus="status">
+  						  <c:set var="key" value="${it.key}"/>
+                          <div class="tab-pane ${status.index==0?'active':''}" id="tab${status.index}">
                             <table class="table table-striped table-bordered dTableR" id="dt_a">
                               <thead>
                                 <tr>
@@ -24,31 +28,42 @@
                                 </tr>
                               </thead>
                               <tbody>
+                             	<c:forEach items="${it.value}" var="info" varStatus="status">
                                 <tr>
                                   <td>NG_11g-11</td>
                                   <td>802.11b/bg/ng</td>
                                   <td>Open System</td>
                                 </tr>
-                                <tr>
-                                  <td>NG_11a-11</td>
-                                  <td>802.11a/na</td>
-                                  <td>Open System</td>
-                                </tr>
+                         		</c:forEach>
                               </tbody>
                             </table>
+	                         <div class="form-actions">
+			                    <button class="btn" type="submit">Cancel</button>
+			                    <button class="btn btn-warning" onclick="delGroup('${it.key}')" type="submit">Delete</button>
+			                    <button class="btn btn-primary" onclick="$('#contentwrapper').load('/ac/configure/profileAdvancedRadioEdit?type=${it.key}') " type="submit">Edit</button>
+			                    <button class="btn btn-primary" type="submit">Apply</button>
+			                  </div>
                           </div>
+                          </c:forEach>
                           <!--tab2-->
-                          <div class="tab-pane" id="tab2"> </div>
-                          <div class="tab-pane" id="tab3"> </div>
-                          <div class="tab-pane" id="tab4"> </div>
+                          
                         </div>
                       </div>
               </div>
-                  <div class="form-actions">
-                    <button class="btn" type="submit">Cancel</button>
-                    <button class="btn btn-warning" type="submit">Delete</button>
-                    <button class="btn btn-primary" type="submit">Edit</button>
-                    <button class="btn btn-primary" type="submit">Apply</button>
-                  </div>
+                 
               </div>
         </div>
+<script>
+
+function delGroup(type){
+	 $.ajax({                                               
+    		type: "POST",                                     
+   	 		url: "config/delete.json",                                    
+    		data: "type="+type, 
+    		success: function(msg){            
+      			$('#contentwrapper').load("/ac/configure/profileAdvancedRadio")   ; 
+    		}
+		});
+}
+</script>
+        

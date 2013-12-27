@@ -15,6 +15,6 @@ public class SimpleSpringJpaDemo {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("conf/spring-cfg.xml");
         UserService userService = ctx.getBean("userService", UserService.class);
 //        userService.createNewAccount("g", "ggg", 700);
-        System.out.println(userService.findByBalanceGreaterThan(100, new PageRequest(1, 2)));
+        //System.out.println(userService.findByBalanceGreaterThan(100, new PageRequest(1, 2)));
     }
 }

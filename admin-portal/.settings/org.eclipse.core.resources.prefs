@@ -6,4 +6,5 @@ encoding//src/test/resources=UTF-8
 encoding//webapp/WEB-INF/views/WuXianAnQuanSheZhi.jsp=UTF-8
 encoding//webapp/WEB-INF/views/WuXianWangLuo.jsp=UTF-8
 encoding//webapp/WEB-INF/views/YongHuGuanLi.jsp=UTF-8
+encoding//webapp/js/ajaxfileupload.js=gbk
 encoding/<project>=UTF-8
