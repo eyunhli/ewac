@@ -1,13 +1,19 @@
 package ac.admin.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import ac.admin.service.UserService;
+
 @Controller
 public class ControlPanelController {
 
+	@Autowired
+	UserService userService;
 	@RequestMapping("/helloWorld")
 	public String helloWorld(Model model) {
 		model.addAttribute("message", "Hello World!");

@@ -14,8 +14,7 @@
 			$('#simple_wizard').stepy({
 				titleClick	: true,
 				nextLabel:      'Next <i class="icon-chevron-right icon-white"></i>',
-				backLabel:      '<i class="icon-chevron-left"></i> Back',
-				next: function(index){ if (index==3) {gebo_progressbars.init();}},
+				backLabel:      '<i class="icon-chevron-left"></i> Back'
 			});
 		},
 		validation: function(){

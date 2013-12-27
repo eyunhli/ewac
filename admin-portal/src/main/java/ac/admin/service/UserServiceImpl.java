@@ -23,26 +23,8 @@ public class UserServiceImpl implements UserService {
 
 
     @Transactional
-    public AccountInfo createNewAccount(String username, String password, Integer initBalance) {
-        AccountInfo accountInfo = new AccountInfo();
-
-        UserInfo userInfo = new UserInfo();
-        userInfo.setUsername(username);
-        userInfo.setPassword(password);
-
-        accountInfo.setBalance(initBalance);
-        accountInfo.setUserInfo(userInfo);
-
-        return userDao.save(accountInfo);
-    }
-
-    public AccountInfo findAccountInfoById(Long id)
-    {
-        return userDao.findByAccountId(id);
-    }
-
-    public List<AccountInfo> findByBalanceGreaterThan(Integer balance,Pageable pageable){
-        Page<AccountInfo> accounts = userDao.findByBalanceGreaterThan(balance,pageable);
-        return accounts.getContent();
+    public boolean login(String username, String password) {
+   
+    	return true;
     }
 }

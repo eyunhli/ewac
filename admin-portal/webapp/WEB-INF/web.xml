@@ -18,7 +18,19 @@
 	<listener>
 		<listener-class>com.ericsson.ssdo.RamsContextLoaderListener</listener-class>
 	</listener>
-
+	
+	<filter>
+		<filter-name>Authority</filter-name>
+		<filter-class>ac.admin.filter.AuthorityFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>Authority</filter-name>
+		<url-pattern>/ac/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Authority</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
 	<!-- Reads request input using UTF-8 encoding -->
 <!-- 	<filter>
 		<filter-name>characterEncodingFilter</filter-name>
